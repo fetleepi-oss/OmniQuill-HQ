@@ -12,6 +12,6 @@
   ],
   "crons": [
     { "path": "/api/billing/chapa/renew", "schedule": "0 8 * * *" },
-    { "path": "/api/cron/workflows", "schedule": "*/5 * * * *" }
+    { "path": "/api/cron/workflows", "schedule": "0 0 * * *" }
   ]
 }
