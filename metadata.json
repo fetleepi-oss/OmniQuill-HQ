@@ -1,0 +1,6 @@
+{
+  "name": "Quill AI - Enterprise AI Content & Marketing Engine",
+  "description": "Enterprise AI copywriting, Brand DNA, Multi-Channel Campaign Builder, SEO Optimization, Help Center, and integrated Paddle & Chapa payments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

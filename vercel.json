@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "crons": [
+    { "path": "/api/billing/chapa/renew", "schedule": "0 8 * * *" },
+    { "path": "/api/cron/workflows", "schedule": "*/5 * * * *" }
+  ]
+}

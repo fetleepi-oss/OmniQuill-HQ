@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: #0A0F1D;
+    --color-surface: #111A2E;
+    --color-border: #1E2A44;
+    --color-primary: #14B8A6;
+    --color-primary-hover: #2DD4BF;
+    --color-accent: #F59E0B;
+    --color-text: #E6EDF7;
+    --color-text-soft: #9AA9C2;
+    --color-text-faint: #7C8BA6;
+    --color-success: #22C55E;
+    --color-error: #F43F5E;
+    --color-info: #38BDF8;
+
+    --brand-teal: #14b8a6;
+    --brand-teal-light: #2dd4bf;
+    --brand-amber: #f59e0b;
+    --brand-dark: #0a0f1d;
+    --panel-surface: rgba(17, 26, 46, 0.85);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    letter-spacing: -0.011em;
+  }
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Visible keyboard focus for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Custom premium scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 15, 29, 0.7);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(20, 184, 166, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 184, 166, 0.5);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(17, 26, 46, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #1E2A44;
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(20, 184, 166, 0.4);
+  box-shadow: 0 10px 30px rgba(20, 184, 166, 0.12);
+  transform: translateY(-1px);
+}
+
+.glow-teal {
+  box-shadow: 0 0 25px -4px rgba(20, 184, 166, 0.3);
+}
+
+.glow-amber {
+  box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.3);
+}
+
+/* Primary teal button token: Dark text #0A0F1D on teal */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #0A0F1D;
+  font-weight: 600;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Minimum 44px tap target utility */
+.min-tap {
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Skeleton loader shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #111A2E 25%, #1E2A44 50%, #111A2E 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
